@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>fruit_salad/title>
+		<meta chaset="utf-8"/>
+	</head>
+		<script>
+
+/* 
+                https://edabit.com/challenge/pkSFRoDrPt2PvFsYd
+
+                fruit_sala
+
+                Para este desafio, corte cada fruta ao meio e classifique os pedaços
+                em ordem alfabética. Esta receita fica melhor quando os pedaços são 
+                unidos para formar um barbante.
+
+                Exemplo Trabalhado:
+
+                fruitSalad(["apple", "pear", "grapes"]) ➞ "apargrapepesple"
+                // Chunks: ["ap", "ple", "pe", "ar", "gra", "pes"]
+                // Sorted chunks: ["ap", "ar", "gra", "pe", "pes", "ple"]
+                // Final string: "apargrapepesple"
+
+
+                Exemplos:
+
+                fruitSalad(["apple", "pear", "grapes"]) ➞ "apargrapepesple"
+
+                fruitSalad(["raspberries", "mango"]) ➞ "erriesmangoraspb"
+
+                fruitSalad(["banana"]) ➞ "anaban"
+
+                Notas
+
+                Se uma fruta tiver um número ímpar de letras, torne o lado direito maior do que o esquerdo.
+                Por exemplo: "apple"será dividido em "ap"e "ple".
+                Todas as frutas serão fornecidas em letras minúsculas.
+*/
+
+
+                fruitSalad = (arr) => {
+                        let chunks = [];
+
+                        for (let i = 0; i < arr.length; i++) {
+
+                            chunks.push(arr[i].slice(0, arr[i].length -(Math.round(arr[i].length / 2))));
+                            
+                            chunks.push(arr[i].slice(arr[i].length -(Math.round(arr[i].length / 2)), arr[i].length));
+                           
+                        } 
+                        console.log(chunks.sort().join(''))
+                }
+
+            fruitSalad(["apple", "pear", "grapes"]) // "apargrapepesple" 
+                                                       
+            fruitSalad(["banana", "kiwi", "strawberry", 'blueberries' ]) // anabanberryblueberrieskistrawwi 
+                                                                            
+            fruitSalad(["raspberries", "mango"]) // "erriesmangoraspb" 
+
+            fruitSalad(["banana"]) //  "anaban"
+
+        </script>
+
+</html>
+	

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>ReOrdering</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*          https://edabit.com/challenge/t3iJRARc9K9x9AAdr
+            
+            Track the Robot (Part 1)
+
+
+            Um robô recebeu uma lista de instruções de movimento. Cada instrução é esquerda, 
+            direita, para cima ou para baixo, seguida por uma distância para mover. O robô 
+            começa em [0, 0]. Você deseja calcular onde o robô irá parar e retornar sua posição 
+            final como uma matriz.
+
+            Notes
+            As únicas instruções fornecidas serão esquerda, direita, para cima ou para baixo.
+            A distância após a instrução é sempre um número inteiro positivo.
+ */
+                 var right = Number(0)
+                 var left  = Number(0)
+                 var down  = Number(0)
+                 var up    = Number(0)
+                 var movimiento_horinzontal = Number(0)
+                 var movimiento_vertical = Number(0)
+        function trackRobot(instructions){
+                 console.log("datos de entrada = "+instructions)
+                 right = Number(0)
+                 left  = Number(0)
+                 down  = Number(0)
+                 up    = Number(0)
+                 movimiento_horinzontal = Number(0)
+                 movimiento_vertical = Number(0)
+	              for(var i = 0; i < instructions.length; i++){
+                    var arry = instructions[i].split(" ")
+		                if(arry[0] === 'right')
+                       right = Number(arry[1]) + right
+		                if(arry[0] === 'left')
+                       left = Number(arry[1]) + left
+		                if(arry[0] === 'down')
+                       down = Number(arry[1]) + down
+		                if(arry[0] === 'up')
+                       up = Number(arry[1]) + up
+                }
+          movimiento_horinzontal = (right - left)
+          movimiento_vertical = (up  - down)
+          console.log([movimiento_horinzontal, movimiento_vertical])
+          return([movimiento_horinzontal, movimiento_vertical])    
+        }
+        trackRobot(["right 10", "up 50", "left 30", "down 10"]) // ➞ [-20, 40]
+
+        // Terminará 20 restantes e 40 acima de onde começou, então retornamos [-20, 40]
+      
+        trackRobot([]) // ➞ [0, 0]
+      // If there are no instructions, the robot doesn't move.
+      
+        trackRobot(["right 100", "right 100", "up 500", "up 10000"]) // ➞ [200, 10500]
+		</script>
+ </body>       
+</html>
+	

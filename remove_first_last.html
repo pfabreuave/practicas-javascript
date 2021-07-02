@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>remove_first_last</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*          https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0
+            
+            Remove First and Last Character
+
+
+            Criar uma função que remova o primeiro e o último caracteres de uma string. 
+            Você recebe um parâmetro, a string original. Você não precisa se preocupar 
+            com strings com menos de dois caracteres.
+
+
+ */
+ function removeChar(str){
+          console.log(str.slice(1,-1));
+          return(str.slice(1,-1));
+/*          
+          console.log(str.substring(1,str.length-1));
+*/
+
+  }
+  removeChar('/hello/')   // hello 
+  removeChar('eloquent')  // loquen
+  removeChar('country')   // ountr
+  removeChar('person')    // erso
+  removeChar('place')     // lac
+  removeChar('ooopsss')   // oopss
+
+  
+						   	
+		</script>
+ </body>       
+</html>
+	

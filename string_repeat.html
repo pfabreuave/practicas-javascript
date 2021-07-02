@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>String repeat</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*         https://www.codewars.com/kata/57a0e5c372292dd76d000d7e
+
+            String repeat
+
+            Escreva uma função chamada repeatStr que repete a string dada exatamente n vezes.
+
+*/			
+
+			function repeatStr (n, s) {
+					 console.log(Array(n+1).join(s));
+  					 return Array(n+1).join(s);
+			}
+			repeatStr(6, "I") // "IIIIII"
+			repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
+		</script>
+ </body>       
+</html>
+	

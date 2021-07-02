@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Troco no cinema</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*          
+            https://www.codewars.com/kata/555615a77ebc7c2c8a0000b8/train/javascript
+            Vasya - Clerk
+
+            HTML e CSS estão incluídos nesta versão, a fim de dar continuidade ao nivelamento recebido nas
+            salas de aula.
+
+
+            Declaração original:
+
+            O novo filme "Vingadores" acaba de ser lançado! Há muitas pessoas na bilheteria do cinema em uma
+            fila enorme. Cada um deles tem uma única nota de 100, 50 ou 25 dólares. Uma passagem "Avengers"
+            custa 25 dólares.
+
+            Vasya está trabalhando atualmente como escriturário. Ele quer vender um ingresso para cada pessoa
+            nesta fila.
+
+            Vasya pode vender um ingresso para cada pessoa e dar o troco se ela inicialmente não tiver dinheiro
+            e vender os ingressos estritamente na fila de espera das pessoas?
+
+            Retorne SIM, se Vasya puder vender uma passagem para cada pessoa e dar o troco com as contas que ela 
+            tem em mãos naquele momento. Caso contrário, retorne NÃO.
+
+            Ejemplos:
+
+            tickets([25, 25, 50]) // => YES 
+            tickets([25, 100]) // => NO. Vasya will not have enough money to give change to 100 dollars
+            tickets([25, 25, 50, 50, 100]) // => NO. Vasya will not have the right bills to give 75 dollars
+            of change (you can't make two bills of 25 from one of 50)
+
+*/
+var cont = Number(0)
+function tickets(fila){
+let cambio = {
+    25 : 0,
+    50 : 0,
+    100: 0 
+  };
+  for (var i = 0 ; i < fila.length ; i++){
+      if(fila[i] === 25){
+          cambio[25]++;
+          cont++
+      }
+      else {
+            if(fila[i] === 50){
+                if(cambio[25] > 0){
+                   cambio[25]--;
+                   cambio[50]++;
+                   cont++
+                }
+                else {return "NO";}
+            }
+            else {
+                  if(cambio[25] > 0 && cambio[50] > 0){
+                     cambio[25]--;
+                     cambio[50]--;
+                     cambio[100]++;
+                     cont++
+                  }
+                  else  {
+                        if(cambio[25] > 2){
+                           cambio[25] = cambio[25] - 3;
+                           cambio[100]++;
+                           cont++
+                        }
+                        else {return "NO";}
+                    }
+                }
+          }      
+  }
+  return "YES"
+}
+tickets([25, 25, 50]);
+document.write("<h2>" +"fueron aceptados "+cont+" clientes"+"</h2>");
+cont = Number(0); 
+tickets([25, 100]) // => NO. Vasya will not have enough money to give change to 100 dollars
+document.write("<h2>" +"fueron aceptados "+cont+" clientes"+"</h2>");
+cont = Number(0); 
+tickets([25, 25, 50, 50, 100])
+document.write("<h2>" +"fueron aceptados "+cont+" clientes"+"</h2>");
+cont = Number(0); 
+tickets([25, 25, 25, 50, 50, 100])
+document.write("<h2>" +"fueron aceptados "+cont+" clientes"+"</h2>");
+cont = Number(0); 
+
+		</script>
+ </body>       
+</html>
+	

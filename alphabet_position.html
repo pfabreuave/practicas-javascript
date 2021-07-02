@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>alphabet_position</title>
+		<meta chaset="utf-8"/>
+	</head>
+		<script>
+
+/* 
+               https://www.codewars.com/kata/546f922b54af40e1e90001da
+
+               
+              Replace With Alphabet Position
+
+              Welcome.
+
+              Neste kata, você deve, dado um string, substituir cada letra por sua posição
+              no alfabeto.
+
+              Se alguma coisa no texto não for uma letra, ignore e não devolva.
+
+              "a" = 1, "b" = 2, etc.
+
+              Example:
+
+        alphabetPosition("The sunset sets at twelve o' clock.")
+        Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" (as a string)
+
+/*
+
+          
+                            Solucion 1 busca equivalencia en UTF-16
+*/
+                function alphabet_position(text) {
+                        var resultado = "";
+                        for (var i = 0; i < text.length; i++) {
+                            var UTF16 = text.toUpperCase().charCodeAt(i)
+                            if (UTF16 > 64 && UTF16 < 91)
+                               resultado += (UTF16 - 64) + " ";
+                        }
+
+                        console.log(resultado.slice(0, resultado.length - 1));
+                }
+                
+                alphabet_position("The sunset sets at twelve o' clock.") 
+                // "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11")
+                alphabet_position("The narwhal bacons at midnight.")  
+                // "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20")
+        </script>
+
+
+</html>
+	

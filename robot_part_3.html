@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Robot (Part 3)</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*          
+            https://edabit.com/challenge/WRB33HsHBFDEfx4EA
+            
+            Rastreie o Robô (Parte 3)
+
+
+            Um robô se move em torno de uma grade 2D. No início está em [0, 0], 
+            voltado para o leste. É controlado por uma sequência de instruções:
+
+            . significa dar um passo à frente na direção atual.
+            < significa girar 90 graus no sentido anti-horário.
+            > significa girar 90 graus no sentido horário.
+
+            Seu trabalho é processar as instruções e retornar a posição final do robô.
+
+            Notas
+
+            As strings de instrução conterão apenas os três caracteres válidos ., <ou >.
+            Você sempre receberá uma string (mas a string pode estar vazia).
+
+            Então, trackRobot("..<.<.")retorna [1, 1].
+ */
+                function trackRobot(entrada) {
+                            var arry = entrada.split('')
+                            var dir = Number(2)
+                            var cordenadas = [0,0,0,0]
+                            var initial_pos = [0,0];                    
+                            for(let i=0; i < arry.length; i++){
+                                    if (arry[i] === "<"){
+                                        if (dir === 0 ) dir = 3
+                                        else dir = dir - 1
+                                    }     
+                                    if (arry[i] === ">"){
+                                        if (dir === 3 ) dir = 0
+                                        else dir = dir + 1          
+                                    }
+                                    if (arry[i] === "."){
+                                        cordenadas[dir] = cordenadas[dir] + 1
+                                        }   
+                            }
+                            initial_pos[0] = cordenadas[2] - cordenadas[0]
+                            initial_pos[1] = cordenadas[1] - cordenadas[3] 
+                            console.log(initial_pos)
+                            return(initial_pos)
+
+                }
+                trackRobot("..<.<.") // retorna [1, 1].
+                trackRobot(".<..<...<....<.....<......") // retorna [3, 4].
+                trackRobot(">>..") // retorna [-2, 0].
+                trackRobot("<>>>><><<<><>>>><><<<><>>") // retorna [0, 0].
+                trackRobot(".".repeat(100)) // retorna [100, 0].
+                trackRobot(".>".repeat(5000)) // retorna [0, 0].
+                trackRobot("..<<..>>..<<..>>..") // retorna [2, 0].  
+		</script>
+ </body>       
+</html>
+	

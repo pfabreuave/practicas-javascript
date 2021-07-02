@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Give me a Diamond</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*         https://www.codewars.com/kata/5503013e34137eeeaa001648
+
+            Give me a Diamond
+
+             Jamie é um programador e namorada de James. Ela gosta de diamantes e quer um diamante
+             string de James. Já que James não sabe como fazer isso acontecer, ele precisa da sua ajuda.
+
+             Tarefa
+
+             Você precisa retornar uma string que se parece com a forma de um diamante quando impressa na tela,
+             usando caracteres de asterisco (*). Espaços finais devem ser removidos, e cada linha deve ser
+             terminado com um caractere de nova linha (\ n).
+
+             Retorna nulo / nulo / Nenhum / ... se a entrada for um número par ou negativo, pois não é possível
+             para imprimir um diamante de tamanho par ou negativo.
+
+Examples
+A size 3 diamond:
+
+ *
+***
+ *
+...which would appear as a string of " *\n***\n *\n"
+
+A size 5 diamond:
+
+  *
+ ***
+*****
+ ***
+  *
+...that is:
+
+"  *\n ***\n*****\n ***\n  *\n"
+
+ */
+    function diamond(n){
+
+          /*
+            calcula parte inferior del diamante
+
+          */
+            if(n < 0 || n % 2 === 0) {
+              console.log(n+ " no es valido para esta function")
+              return null
+            }
+            let parte_inferior = "";
+            let I_Cont = 0;
+            for(let i = n; i > 0; i-=2){
+                let space = " ".repeat(I_Cont);
+                parte_inferior += `${space}${`*`.repeat(i)}\n`;
+                I_Cont++;
+            }
+
+            /*
+              calcula parte superior del diamante
+
+            */
+
+            let parte_superior = "";
+            let S_cont = I_Cont-1;
+            for(let i = 1; i < n; i+=2){
+                let space = " ".repeat(S_cont);
+                parte_superior += `${space}${`*`.repeat(i)}\n`;
+                S_cont--;
+            }
+      console.log(parte_superior.concat(parte_inferior))     
+      return parte_superior.concat(parte_inferior)
+    }
+      diamond(3)
+      diamond(5)
+      diamond(7)
+      diamond(10)
+      diamond(2)
+      diamond(3)
+      diamond(0)
+		</script>
+ </body>       
+</html>
+	

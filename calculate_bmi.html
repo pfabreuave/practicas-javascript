@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Calculate BMI</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*         https://www.codewars.com/kata/57a429e253ba3381850000fb
+
+            Calculate BMI
+
+            Escreva a função bmi que calcula o índice de massa corporal (bmi = peso / altura2).
+
+            if bmi <= 18.5 return "Underweight"
+
+            if bmi <= 25.0 return "Normal"
+
+            if bmi <= 30.0 return "Overweight"
+
+            if bmi > 30 return "Obese"
+*/
+
+            function bmi(weight, height) {
+
+                   /*let bmi = weight/Math.pow(height,2);*/
+                    let bmi = weight / (height**2);
+                    if(bmi <= 18.5) {
+                                    console.log("bmi = "+bmi+" é Underweigh")
+                                    return 'Underweight'
+                    }  
+                    if(bmi <= 25)   {
+                                    console.log("bmi = "+bmi+" é Normal")
+                                    return 'Normal'
+                    }  
+                    if(bmi <= 30)   {
+                                    console.log("bmi = "+bmi+" é Overweight")
+                                    return 'Overweight'
+                    }
+                    if(bmi  > 30)   {
+                                    console.log("bmi = "+bmi+" é Obese")
+                                    return 'Obese'
+                    }
+            }        
+              bmi(90, 1.90)
+              bmi(70, 1.90)
+              bmi(80, 1.70)
+              bmi(90, 1.60)
+              bmi(100, 1.75)
+		</script>
+ </body>       
+</html>
+	

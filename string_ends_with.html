@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>String ends with</title>
+		<meta chaset="utf-8"/>
+	</head>
+   <body>
+		<script>
+
+/*    
+           https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d
+           
+           String ends with
+            
+           Declaração original:
+
+           Complete the solution so that it returns true if the first argument(string)
+           passed in ends with the 2nd argument (also a string).     
+*/
+         var resultado = ' '  
+         function solution(str, ending){ 
+                  resultado = str.endsWith(ending);
+                  return str.endsWith(ending); 
+         }
+         solution('abc', 'bc') // retorna verdadeiro
+         document.write("<h4>"+"resultado para el string 1 "+resultado+"</h4>")
+
+         solution('abc', 'd') // retorna falso
+         document.write("<h4>"+"resultado para el string 2  "+resultado+"</h4>")
+
+         solution('existen practicas en clase de React_JS', 'React') // retorna falso
+         document.write("<h4>"+"resultado para el string 3  "+resultado+"</h4>")
+
+         solution('existen practicas en clase de React_JS', 'JS') // retorna verdadeiro
+         document.write("<h4>"+"resultado para el string 4  "+resultado+"</h4>")
+         
+      </script>
+
+   </body>
+</html>
+
+
+	

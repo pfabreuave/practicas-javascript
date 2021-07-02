@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>ReOrdering</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*          https://www.codewars.com/kata/5785cd91a1b8d5c06e000007
+
+            
+            ReOrdering
+
+
+            Há uma frase que contém um erro de ordenação.
+
+            A parte com letra maiúscula deve ser a primeira palavra.
+
+            Crie uma função para reordenar
+
+
+
+ */
+ function reOrdering(text){
+          console.log("entrada de string = "+text)
+          let separated = text.split(" ")
+          separated.map(palabra => {
+                    if(palabra.charAt(0) === palabra.charAt(0).toUpperCase())  {
+                            let pos = separated.indexOf(palabra)
+                            separated.splice(pos, 1)
+                            separated.unshift(palabra)
+                        }
+  
+  
+          })
+    /* return separated.join(" ") */
+          
+   console.log("salida  de string = "+separated.join(" "))
+   
+  }
+										     
+ reOrdering( "ming Yao" )
+ reOrdering( "Mano donowana" )					
+ reOrdering( "wario LoBan hello" )                   
+ reOrdering( "bull color pig Patrick" )
+						   	
+		</script>
+ </body>       
+</html>
+	

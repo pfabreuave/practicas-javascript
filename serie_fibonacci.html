@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Serie Fibonacci</title>
+        <link rel="stylesheet" href="estilos_fibonacci.css">
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+        <header>
+            <h2>Serie Fibonacci</h2>  
+            Fibonacci Deseado: <input id="numero" type="number">
+            
+            <button onclick="fibonacci()" id="resposta">CLK</button>
+        </header>
+        
+		<script>
+            0,1,1,2,3,5,8,13,21,34
+
+/*          HTML e CSS estão incluídos nesta versão, a fim de dar continuidade ao nivelamento recebido nas
+            salas de aula.
+
+
+            Declaração original:
+
+            E aqui está Fibonacci novamente. Desta vez, queremos dar um passo adiante. Nossa função fib ()
+            deve ser mais rápida! Consegues fazê-lo?
+
+            Caso você não saiba, qual é o número de Fibonacci:
+
+            O enésimo número de Fibonacci é definido pela soma dos dois números de Fibonacci anteriores.
+            Em nosso caso: fib (1): = 0 e fib (2): = 1. Com esses valores iniciais, você deve ser capaz 
+            de calcular cada número de Fibonacci a seguir.
+
+            Conceito de acordo com Wikipedia :
+            “Em matemática, os números de Fibonacci são os números na seguinte sequência inteira,
+             chamada de sequência de Fibonacci , e caracterizada pelo fato de que cada número após
+             os dois primeiros é a soma dos dois anteriores.”
+
+*/
+
+function fibonacci(){
+            /* si necesita correr en codewars cambiar las dos primeras lineas por :
+            
+                var valor = n;
+            */
+         var valor = parseInt(document.getElementById('numero').value);
+         var resposta = document.getElementById('resposta');
+         var segundo=0;
+         var primero=1;
+         var numero;
+
+if(valor<=2)
+         numero = valor-1;
+else
+         for(var cont=3 ; cont<=valor ; cont++){
+                numero = primero + segundo;
+                segundo = primero;
+                primero = numero;
+         }
+
+resposta.innerHTML=numero;
+}                 
+       
+		</script>
+ </body>       
+</html>
+	

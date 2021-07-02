@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Robot (Part 2)</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*          https://edabit.com/challenge/jfpfpH6w42tZeRo2T
+            
+            Track the Robot (Part 2)
+
+
+           Este robô percorre uma grade 2D. Começa (0, 0)voltado para o Norte. Após cada vez 
+           que se move, o robô gira 90 graus no sentido horário. Dada a quantidade de movimento 
+           do robô a cada vez, você deve calcular a posição final do robô.
+
+           Notas
+
+           Cada movimento é um número inteiro (número inteiro).
+ */
+                function trackRobot(...entrada) {
+                            console.log(entrada)
+                            var dir = Number(0)
+                            var cont = Number(0)
+                            var cordenadas = [0,0,0,0]
+                            var initial_pos = [0,0];                       
+                            for(let i=0; i < entrada.length; i++){
+                                if (cont === 4){
+                                        cordenadas[0] = entrada[i] + cordenadas[0]
+                                        cont = Number(1)
+                                }else{
+                                        cordenadas[cont] = entrada[i] + cordenadas[cont]
+                                        cont++
+                                }
+                            }               
+                            initial_pos[0] = cordenadas[1] - cordenadas[3]
+                            initial_pos[1] = cordenadas[0] - cordenadas[2]
+                            console.log(initial_pos)
+                            return(initial_pos)
+                }
+                
+                trackRobot(20, 30, 10, 40) // ➞ [-10, 10]
+                trackRobot(10, -10, -10, 10) // ➞ [-20, 20]
+                trackRobot() // ➞ [0, 0]
+                trackRobot(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) //➞ [6, 5]
+                trackRobot(1, 0, 2, 0, 3, 0, 4, 0, 5, 0) //➞ [0, 3]
+                trackRobot(0, 1, 0, 2, 0, 3, 0, 4, 0, 5) //➞ [3, 0]
+                trackRobot(-10, 20, 10) //➞ [20, -20]    
+		</script>
+ </body>       
+</html>
+	

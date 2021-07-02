@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Palabras Invertidas</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+        
+		<script>
+
+/*         
+           https://www.codewars.com/kata/523f5d21c841566fde000009
+           
+           Array.diff
+            
+            Declaração original:
+
+           Seu objetivo neste kata é implementar uma função de diferença, que subtrai
+           uma lista da outra e retorna o resultado.
+
+           Deve-se remover todos os valores da lista a, que estão presentes na lista b, mantendo sua ordem.
+            
+*/
+            var resultado = " "
+            function array_diff(a, b) {
+                     resultado = a.filter(val => !b.includes(val)); 
+                     return resultado         
+            }
+            array_diff([1, 2, 3, 4, 5],  [2, 4, 5]); // resultado [1,3,5]
+            console.log(" resultado  " +resultado);
+            array_diff([1, 2, 16, 44, 87],  [22, 41]); // resultado [1, 2, 16, 44, 87]
+            console.log(" resultado  " +resultado);
+		</script>
+    </body>       
+</html>
+	

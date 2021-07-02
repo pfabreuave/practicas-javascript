@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Impar de vezes array</title>
+		<meta chaset="utf-8"/>
+	</head>
+		<script>
+
+/*          Esta é uma nova versão do programa, neste caso uma função contendo o array e o 
+            resultado esperado é invocado, cada array é tratado separadamente
+
+
+            Declaração original:
+
+            Dado um array de inteiros, encontre aquele que ocorre um número ímpar de vezes.
+            Sempre haverá um único número inteiro que aparece um número ímpar de vezes.
+*/
+
+            var reg_ant = Number(0)
+            var cont = Number(0)
+            function examina(matriz, resultado) {
+                            matriz.sort(function(a, b){return a - b});
+                            for(var j = 0; j < matriz.length; j++) {
+                                if (matriz.length === 1) {
+                                    reg_ant = matriz[j]
+                                    cont = Number(1)
+                                    impreme_resultado()
+                                    break  
+                                } 
+                                if (j === 0){
+                                    reg_ant = matriz[j]
+                                }
+                                if (matriz[j] === reg_ant) {
+                                    cont = cont + 1
+                                }
+                                else {
+                                    seleccion()
+                                    if (j === 0){
+                                        break
+                                    }
+                                }
+                                if (j === (matriz.length - 1)) {
+                                        seleccion()
+                                        if (j === 0){
+                                             break
+                                        }
+                                } 
+                            }
+          
+            /*
+                 Rotina mostrando o resultado final
+            */
+
+                            function impreme_resultado() {
+                                document.write("<h4>" +"Aparições =  "+cont+ " Array "
+                                                +"["+matriz+"]"+ " resultado final = " +reg_ant+
+                                                " resultado esperado = "+resultado+"</h4>");
+                                cont = Number(0)   
+                            }
+
+            /*
+                 Rotina que determina se o valor obtido é elegível
+            */
+                            function seleccion() {
+                                    if ((cont %2 === 0)) {
+                                         cont = Number(1)   
+                                         reg_ant = matriz[j]
+                                    }
+                                    else {
+                                         impreme_resultado()
+                                         cont = Number(0)
+                                         j = Number(0)  
+                                    }   
+                            }
+            }
+            /*
+                Chamada da função para cada Array
+
+            */
+                    examina([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5], 5);
+                    examina([1,1,2,-2,5,2,4,4,-1,-2,5], -1);
+                    examina([20,1,1,2,2,3,3,5,5,4,20,4,5], 5);
+                    examina([10], 10);
+                    examina([1,1,1,1,1,1,10,1,1,1,1], 10);
+                    examina([5,4,3,2,1,5,4,3,2,10,10], 1);
+                    examina([20,20,20], 20);
+                    examina([1,1,1,1,1,1,9,1,1,9,9], 9);
+                    examina([1,1,1,1,1,1,8,8,8,8,8], 8);
+            
+		</script>
+</html>
+	

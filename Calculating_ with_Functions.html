@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>funções con resultados</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+      
+		<script>
+
+/*         
+            https://www.codewars.com/kata/525f3eda17c7cd9f9e000b39/javascript
+            
+            Declaração original:
+
+            Desta vez, queremos escrever cálculos usando funções e obter os resultados. Vamos dar uma olhada
+            em alguns exemplos:
+
+            Deve haver uma função para cada número de 0 ("zero") a 9 ("nove")
+
+            Deve haver uma função para cada uma das seguintes operações matemáticas: mais, menos, vezes,
+            divididoBy (dividido_by em Ruby e Python)
+
+            Cada cálculo consiste em exatamente uma operação e dois números
+
+            A função mais externa representa o operando esquerdo, a função mais interna representa o operando direito
+
+            A divisão deve ser uma divisão inteira. Por exemplo, deve retornar 2, não 2.666666 ...:
+            
+*/
+
+function expression(number, operation){
+	if(!operation)
+		return number;	
+	return operation(number);
+} 
+function zero(operation) { return expression(0, operation); }
+function one(operation) { return expression(1, operation); }
+function two(operation) { return expression(2, operation); }
+function three(operation) { return expression(3, operation); }
+function four(operation) { return expression(4, operation); }
+function five(operation) { return expression(5, operation); }
+function six(operation) { return expression(6, operation); }
+function seven(operation) { return expression(7, operation); }
+function eight(operation) { return expression(8, operation); }
+function nine(operation) { return expression(9, operation); }
+ 
+function plus(x) { return function(y) { return y + x;}}
+function minus(x) { return function(y) { return y - x;}}
+function times(x) { return function(y) { return y * x;}}
+function dividedBy(x) { return function(y) { return Math.floor(y / x);}}
+
+seven(times(five())); // must return 35
+four(plus(nine())); // must return 13
+eight(minus(three())); // must return 5
+six(dividedBy(two())); // must return 3
+		</script>
+ </body>       
+</html>
+	

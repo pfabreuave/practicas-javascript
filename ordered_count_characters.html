@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Ordered Count of Characters</title>
+		<meta chaset="utf-8"/>
+	</head>
+    <body>
+		<script>
+
+/*        https://www.codewars.com/kata/ordered-count-of-characters
+
+            Ordered Count of Characters
+
+            Conte o número de ocorrências de cada caractere e retorne-o como uma lista de tuplas
+            em ordem de aparecimento. Para saída vazia, retorne uma lista vazia.
+
+            Example:
+
+            orderedCount("abracadabra") ==
+            [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]
+*/
+
+              function charCount (text) {
+                  var characters = text.split("")
+                  var unico = characters.filter((chart, index) => characters.indexOf(chart) == index)
+                  console.log(unico.map((chart) => [chart, text.split(chart).length - 1]))
+                  return unico.map((chart) => [chart, text.split(chart).length - 1])
+              }
+              charCount('aaabbbbdd') 
+              console.log("esperado = [['a', 3], ['b', 4], ['d', 2]]");
+              charCount('abracadabra') 
+              console.log("esperado = [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]");
+              charCount('Code Wars')  
+              console.log("esperado = [['C', 1], ['o', 1], ['d', 1], ['e', 1], [' ', 1], ['W', 1], ['a', 1], ['r', 1], ['s', 1]]],");
+              charCount('233312') 
+              console.log("esperado = [['2', 2], ['3', 3], ['1', 1 ]]");
+		</script>
+    </body>       
+</html>
+	
