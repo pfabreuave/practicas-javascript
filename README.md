@@ -31,4 +31,5 @@ cada prática será adicionada à lista neste readME com uma breve descrição
 25. odd_or_even(CODEWARS): Dada uma lista de inteiros, determine se a soma de seus elementos é ímpar ou par.
 26. alphabet_position(CODEWARS): substituir cada letra por sua posição no alfabeto.
 27. length_array(EDABIT): Função que retorne o número total de itens não aninhados em uma matriz aninhada.
-28. old_mobile(CODEWARS): Calcular a quantidade de pressionamentos de botão exigido para qualquer frase.  
+28. old_mobile(CODEWARS): Calcular a quantidade de pressionamentos de botão exigido para qualquer frase.
+29. Kebabize(CODEWARS): Converts a camel case string into a kebab case.   

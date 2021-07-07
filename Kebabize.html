@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Kebabize</title>
+		<meta chaset="utf-8"/>
+	</head>
+	<script>
+
+/* 
+               https://www.codewars.com/kata/57f8ff867a28db569e000c4a/train/javascript
+               
+               Kebabize
+
+               Modify the kebabize function so that it converts a camel case string into a kebab case.
+
+                kebabize('camelsHaveThreeHumps') // camels-have-three-humps
+                kebabize('camelsHave3Humps') // camels-have-humps
+                
+                Notes:
+
+                the returned string should only contain lowercase letters
+
+/*          
+                            otras soluciones
+*/
+/*
+       function kebabize(str) {
+
+            var nonumber = str.replace(/\d/g, '').split(/(?=[A-Z])/g);
+            return nonumber.join('-').toLowerCase();
+
+        }
+
+        function kebabize(str) {
+            return str.replace(/([A-Z])/g, "-$1").replace(/[0-9]/g, '').toLowerCase().replace(/^-/, '');
+        }
+
+        function kebabize(str) {
+            return str.replace(/[0-9]/g, '').replace(/\B[A-Z]/g, (x) => '-' + x).toLowerCase();
+}
+*/
+
+/*          
+                           mi solucion
+*/
+        
+        function kebabize(str) {
+            var arr = str.split("");
+            for (var i = arr.length - 1; i >= 0; i--) {
+                if (Number(arr[i]) || arr[i] === "0") {
+                    arr.splice(i, 1);
+                }
+                else if (arr[i] === arr[i].toUpperCase() && !Number.isInteger(arr[i]) && i !== 0) {
+                        arr.splice(i, 0, "-");
+                }       
+            }
+            if (arr[0] === "-") {
+                arr.splice(0, 1);
+            }
+            console.log(arr.join (""). toLowerCase ());
+            return(arr.join (""). toLowerCase ());
+} 
+        kebabize('camelsHaveThreeHumps') // camels-have-three-humps
+        kebabize('camelsHave3Humps') // camels-have-humps
+        kebabize('PuNNp') // pu-n-np) 
+        kebabize('ZvqTf') // zvq-tf
+        kebabize('Z') // z
+    </script>
+</html>
+	
