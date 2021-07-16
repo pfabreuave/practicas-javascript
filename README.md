@@ -32,4 +32,6 @@ cada prática será adicionada à lista neste readME com uma breve descrição
 26. alphabet_position(CODEWARS): substituir cada letra por sua posição no alfabeto.
 27. length_array(EDABIT): Função que retorne o número total de itens não aninhados em uma matriz aninhada.
 28. old_mobile(CODEWARS): Calcular a quantidade de pressionamentos de botão exigido para qualquer frase.
-29. Kebabize(CODEWARS): Converts a camel case string into a kebab case.   
+29. Kebabize(CODEWARS): Converts a camel case string into a kebab case.
+30. dominio-url(CODEWARS): Extraia o domínio do URL.   
+31. area-poligono-regular(CODEWARS): Calcular a área de um polígono regular.

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>dominio url</title>
+		<meta chaset="utf-8"/>
+	</head>
+	<script>
+
+/* 
+            https://www.codewars.com/kata/514a024011ea4fb54200004b
+               
+            Dominio URL
+
+            
+            Description:
+
+            Write a function that when given a URL as a string, parses out just the domain name 
+            and returns it as a string. For example:
+
+
+            domainName("http://github.com/carbonfive/raygun") == "github" 
+            domainName("http://www.zombie-bites.com") == "zombie-bites"
+            domainName("https://www.cnet.com") == "cnet"
+
+
+                otras soluciones
+
+        function domainName(url){
+                return url.match(/(?:http(?:s)?:\/\/)?(?:w{3}\.)?([^\.]+)/i)[1];
+
+        
+        }
+
+        function domainName(url){
+                return  url.replace('http://', '')
+                        .replace('https://', '')
+                        .replace('www.', '')
+                        .split('.')[0];
+}
+        function domainName(url){
+                return url.replace(/(https?:\/\/)?(www\.)?/, '').split('.')[0]
+
+
+}
+        function domainName(url){  
+                return url.replace(/.+\/\/|www.|\..+/g, '')
+}
+*/
+
+/*          
+                           mi solucion
+*/
+
+        function domainName(url) {     
+                url = url.replace("https://", "");
+                url = url.replace("http://", "");
+                url = url.replace("www.", "");
+        console.log(url.split(".")[0]);
+}
+        
+        domainName("http://github.com/carbonfive/raygun") == "github" 
+        domainName("http://www.zombie-bites.com") == "zombie-bites"
+        domainName("https://www.cnet.com") == "cnet"
+        domainName('http://www.google.com')
+        
+    </script>
+</html>
+	

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>area poligono regular</title>
+		<meta chaset="utf-8"/>
+	</head>
+	<script>
+
+/* 
+            https://www.codewars.com/kata/5a58ca28e626c55ae000018a
+               
+            Calcule a área de um polígono regular de n lados dentro de um círculo de raio r
+
+            Escreva a seguinte função:
+
+            function areaOfPolygonInsideCircle(circleRadius, numberOfSides)
+            Deve calcular a área de um polígono regular de numberOfSides, number-of-sidesou number_of_sideslados 
+            dentro de um círculo de raio circleRadius, circle-radiusou circle_radiusque passa através de todos os 
+            vértices do polígono (tal círculo é chamado círculo circunscrito ou circunferência ). A resposta deve 
+            ser um número arredondado para 3 casas decimais.
+
+Exemplos de entrada :: saída
+
+areaOfPolygonInsideCircle(3, 3) // returns 11.691
+
+areaOfPolygonInsideCircle(5.8, 7) // returns 92.053
+
+areaOfPolygonInsideCircle(4, 5) // returns 38.042
+
+                                otras soluciones
+
+        areaOfPolygonInsideCircle=(a,b)=>Math.round((a*a*Math.sin(2/b*Math.PI)/2)*b*1e3)/1e3
+        
+        areaOfPolygonInsideCircle=(r,n)=>Math.round(n/2*r*r*Math.sin(2*Math.PI/n)*1000)/1000
+
+        let areaOfPolygonInsideCircle = (r, n) => Math.round(1e3 * (0.5 * n * r ** 2 * Math.sin(2 * Math.PI / n))) / 1e3;
+
+
+
+
+
+
+
+/*          
+                           mi solucion
+*/
+
+        function areaOfPolygonInsideCircle(circleRadius, numberOfSides) {
+        var angulo = Math.PI / numberOfSides;
+            var area = (circleRadius * circleRadius * numberOfSides * Math.sin(angulo * 2)) / 2;
+            return(+area.toFixed(3));
+}
+        
+            areaOfPolygonInsideCircle(3, 3) // returns 11.691
+            areaOfPolygonInsideCircle(5.8, 7) // returns 92.053
+            areaOfPolygonInsideCircle(4, 5) // returns 38.042
+    </script>
+</html>
+	
