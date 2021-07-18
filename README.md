@@ -35,3 +35,5 @@ cada prática será adicionada à lista neste readME com uma breve descrição
 29. Kebabize(CODEWARS): Converts a camel case string into a kebab case.
 30. dominio-url(CODEWARS): Extraia o domínio do URL.   
 31. area-poligono-regular(CODEWARS): Calcular a área de um polígono regular.
+32. fizzbuzz(CODEWARS): substitua múltiplos de 3 e 5 por fizz, buzz ou fizzbuzz.
+33. directions-reduction (CODEWARS): Remova destinos desnecessários. 

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Fizz Buzz</title>
+		<meta chaset="utf-8"/>
+	</head>
+	<script>
+
+/* 
+        https://www.codewars.com/kata/5300901726d12b80e8000498/
+               
+        Fizz Buzz
+
+       	Return an array containing the numbers from 1 to N, where N is the parametered value.
+
+		Replace certain values however if any of the following conditions are met:
+
+		If the value is a multiple of 3: use the value "Fizz" instead
+		If the value is a multiple of 5: use the value "Buzz" instead
+		If the value is a multiple of 3 & 5: use the value "FizzBuzz" instead
+		N will never be less than 1.
+
+		Method calling example:
+
+		fizzbuzz(3) -->  [1, 2, "Fizz"]
+
+
+/*          
+                           otras soluciones
+*/	
+
+/*
+      	var fizzify = fizzbuzz = function(n)
+{
+  			return Array.apply(null, new Array(n)).map(function(e, i){
+    			return (++i % 3 ? '' : 'Fizz' ) + (i % 5 ? '' : 'Buzz') || i;
+  			}); 
+		}
+*/			
+/*
+		const fizzbuzz = (n)=> 
+                Array.from({length: n}, (_,i)=> i+1)
+                  .map( el=> el % 3 === 0  && el % 5 === 0 ? 'FizzBuzz' : 
+                        el % 3 === 0 ? 'Fizz' : el % 5 === 0 ? 'Buzz' : el )
+*/
+
+
+/*          
+                           mi solucion
+*/
+
+		function fizzbuzz(n)
+{
+		var mat = []
+		for (var i = 1; i <= n; i++) {
+		 	 var f = i % 3 == 0, b = i % 5 == 0;
+  			mat.push(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
+		}
+		console.log(mat)
+}
+	fizzbuzz(10)	
+
+
+    </script>
+</html>
+	
