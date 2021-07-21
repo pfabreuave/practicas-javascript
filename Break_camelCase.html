@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Break camelCase</title>
+		<meta chaset="utf-8"/>
+	</head>
+	<script>
+
+/* 
+            
+    https://www.codewars.com/kata/break-camelcase
+               
+            Break camelCase
+
+            Complete a solução para que a função separe o invólucro do camelo, usando um espaço entre as palavras.
+
+            Exemplo
+                    "camelCasing"  =>  "camel Casing"
+                    "identifier"   =>  "identifier"
+                    ""             =>  ""
+
+/*          
+                           otras soluciones
+*/  
+/*
+function solution(string) {
+  return(string.replace(/([A-Z])/g, ' $1'));
+}
+// -----------------------------------------------
+function solution(string) {
+  return string.replace(/([a-z])([A-Z])/g, "$1 $2");
+}
+// -----------------------------------------------
+function solution(string) {
+  string = string.split('').map(function (el) {
+    if (el === el.toUpperCase()) {
+      el = ' ' + el
+    }
+    return el
+  })
+  return string.join('')
+}
+// -----------------------------------------------
+const solution = string => string.replace(/[A-Z]/g, ' $&');
+// -----------------------------------------------
+function solution(string){
+  return string.replace(/[A-Z]/g, function(c){return " " + c;});
+}
+// -----------------------------------------------
+const solution = string => {
+  return [...string].map((char) => {
+    return (char === char.toUpperCase()) ? ` ${char}` : char;
+  }).join('');
+}
+// -----------------------------------------------
+
+*/
+/*          
+                           mi solucion
+*/  
+
+        function breakCamelCase(string) {
+            console.log(string.split('').map(char => (char === char.toUpperCase() ? ` ${char}` : char)).join(''))
+        }
+        
+        breakCamelCase("camelCasing") // "camel Casing"
+        breakCamelCase("identifier") // "identifier"
+        breakCamelCase("") // ""
+        breakCamelCase('camelCasing') //, 'camel Casing', 'Unexpected result')
+        breakCamelCase('camelCasingTest') //, 'camel Casing Test', 'Unexpected result')
+    </script>
+</html>
+	

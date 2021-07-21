@@ -36,4 +36,6 @@ cada prática será adicionada à lista neste readME com uma breve descrição
 30. dominio-url(CODEWARS): Extraia o domínio do URL.   
 31. area-poligono-regular(CODEWARS): Calcular a área de um polígono regular.
 32. fizzbuzz(CODEWARS): substitua múltiplos de 3 e 5 por fizz, buzz ou fizzbuzz.
-33. directions-reduction (CODEWARS): Remova destinos desnecessários. 
+33. directions-reduction (CODEWARS): Remova destinos desnecessários.
+34. zeros-de-nf(CODEWARS): Calcule o número de zeros à direita em um fatorial de um determinado número.
+35. break_camelCase(CODEWARS: Função que separe o invólucro do camelo, usando um espaço entre as palavras.     

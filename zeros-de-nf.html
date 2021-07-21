@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>zeros-de-nf</title>
+		<meta chaset="utf-8"/>
+	</head>
+	<script>
+
+/*
+        https://www.codewars.com/kata/52f787eb172a8b4ae1000a34/javascript
+
+        
+        Number of trailing zeros of N! (https://mathworld.wolfram.com/Factorial.html)
+
+
+        Observe que cada múltiplo de 5 no produto fatorial contribuirá com 1 para o número de zeros 
+        à direita. Além disso, cada múltiplo de 25 contribuirá com 1 adicional para o número de zeros 
+        à direita. Então, cada múltiplo de 125 contribuirá com outro 1 para o número de zeros à direita 
+        e assim por diante.
+
+        Este é um ótimo link para entender o conceito por trás disso: 
+                  https://brilliant.org/wiki/trailing-number-of-zeros/
+
+        Escreva um programa que calcule o número de zeros à direita em um fatorial de um determinado número.
+
+        N! = 1 * 2 * 3 * ... * N
+
+        Tenha cuidado 1000!com 2568 dígitos ...
+
+        Para obter mais informações, consulte: http://mathworld.wolfram.com/Factorial.html
+
+        Exemplos
+        zeros(6) = 1
+        # 6! = 1 * 2 * 3 * 4 * 5 * 6 = 720 --> 1 trailing zero
+
+        zeros(12) = 2
+        # 12! = 479001600 --> 2 trailing zeros
+        Dica: você não deve calcular o fatorial. Encontre outra maneira de encontrar o número de zeros.
+
+function zeros (n) {
+var num=0;
+  for(var i=1;i<=n;i++){
+    var j=i;
+    while(j%5==0){
+      num=num+1;
+      j=j/5;
+    }
+  }
+  return num;
+}
+ 
+
+Excellent answer:
+
+ function zeros (n) {
+   var zs = 0;
+   while(n>0){
+     n=Math.floor(n/5);
+     zs+=n
+   }
+   return zs;
+ }
+-------------------------------------------------
+
+
+function zeros(n) {
+    var result = 0;
+    while (n = Math.floor(n / 5)) result += n;
+    return result;
+}
+----------------------------------------------------
+     function zeros (n) {
+  const kmax = Math.log(n)/Math.log(5); //Log2(n)/log2(5) = log5(n)
+  let accum = 0;
+  for (let k = 1; k <= kmax; k++) {
+    accum += Math.floor(n/Math.pow(5,k));
+  }
+  return accum;
+}
+----------------------------------------------------
+function zeros (n) {
+  n = ~~(n/5);
+  return  n + (n<5 ? 0 : zeros(n));
+}
+----------------------------------------------------
+const zeros = n => n/5 < 1 ? 0 : Math.floor(n/5) + zeros(n/5);
+
+--------------------------------------------------------------------
+function zeros (n) {
+  return n < 5 ? 0 : Math.floor(n / 5) + zeros(n / 5);
+}
+
+
+/* 
+            
+    
+/*          
+                           mi solucion
+*/  
+            function zeros (n) {
+                var ceros = Number(0);
+                    while(n>0){
+                    n=Math.floor(n/5); 
+                    ceros+=n;
+                }
+                console.log(ceros);
+            }
+            zeros(3)
+            zeros(6)
+            zeros(12)
+            zeros(34)
+            zeros(31)
+        
+    </script>
+</html>
+	
